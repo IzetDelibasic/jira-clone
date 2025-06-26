@@ -1,0 +1,78 @@
+.sidebar {
+  max-height: 100vh;
+  width: 20%;
+  @include border(1px, solid, $border-color, right);
+  @include flex($direction: column);
+
+  .sidebar__navigation {
+    overflow-y: auto;
+    scrollbar-width: thin;
+
+    .sidebar__list {
+      list-style: none;
+
+      .sidebar__section {
+        .sidebar__title {
+          @include padding(0, 0, 0, 1rem);
+          @include text-style(
+            $font-size-medium,
+            $secondary-color,
+            $weight: bold,
+            $transform: uppercase
+          );
+        }
+
+        .sidebar__sublist {
+          list-style: none;
+
+          .sidebar__item {
+            @include margin(1rem, 0rem, 1rem, 0rem);
+            @include padding(0.5rem, 0, 0.5rem, 1rem);
+            @include hover-effect($hover-color);
+
+            .sidebar__link {
+              @include text-style($font-size-large, $secondary-color);
+
+              .sidebar__icon {
+                @include margin(0, 1rem, 0, 0);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sidebar__header {
+    @include flex($justify: start, $align: center);
+    @include margin(1rem, 1rem, 1rem, 1rem);
+
+    .sidebar__header-content {
+      @include margin(0, 0, 0, 1rem);
+
+      .sidebar__header-title {
+        @include text-style($font-size-medium, $primary-color);
+      }
+
+      .sidebar__header-subtitle {
+        @include margin(0.2rem, 0, 0, 0);
+        @include text-style($font-size-small, $secondary-color);
+      }
+    }
+  }
+
+  .sidebar__footer {
+    text-align: center;
+    @include padding(1rem, 0, 1rem, 0);
+    @include border(1px, solid, $border-color, top);
+
+    &-text {
+      @include text-style($font-size-small, $secondary-color);
+      @include margin(0, 0, 0.5rem, 0);
+    }
+
+    &-link {
+      @include text-style($font-size-medium, $link-color);
+    }
+  }
+}

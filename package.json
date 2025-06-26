@@ -1,0 +1,14 @@
+{
+  "name": "jira-clone",
+  "version": "1.0.0",
+  "description": "Jira Clone",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass scss/style.scss css/style.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.89.2"
+  }
+}

@@ -1,0 +1,78 @@
+$primary-color: #2c3e50;
+$secondary-color: #777;
+$hover-color: #e3e1e1;
+$white-color: #fff;
+$border-color: #e1e0e0;
+$link-color: #297fb8;
+
+$font-family: "Open Sans", sans-serif;
+
+$font-size-small: 0.7rem;
+$font-size-medium: 0.8rem;
+$font-size-large: 0.9rem;
+
+@mixin flex($justify: flex-start, $align: stretch, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin hover-effect($color) {
+  &:hover {
+    background-color: $color;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+  }
+}
+
+@mixin margin($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  margin: $top $right $bottom $left;
+}
+
+@mixin padding($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  padding: $top $right $bottom $left;
+}
+
+@mixin border($width: 1px, $style: solid, $color: $border-color, $sides: all) {
+  @if $sides == all {
+    border: $width $style $color;
+  } @else {
+    @if $sides == top {
+      border-top: $width $style $color;
+    } @else if $sides == right {
+      border-right: $width $style $color;
+    } @else if $sides == bottom {
+      border-bottom: $width $style $color;
+    } @else if $sides == left {
+      border-left: $width $style $color;
+    }
+  }
+}
+
+@mixin text-style(
+  $size,
+  $color,
+  $decoration: none,
+  $weight: normal,
+  $transform: none
+) {
+  font-size: $size;
+  color: $color;
+  text-decoration: $decoration;
+  font-weight: $weight;
+  text-transform: $transform;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 10px;
+  font-family: $font-family;
+}

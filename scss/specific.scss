@@ -1,0 +1,9 @@
+@import "sidebar.scss";
+
+.container {
+  @include flex();
+}
+
+.main-content {
+  padding: 2rem;
+}
