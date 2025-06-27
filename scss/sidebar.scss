@@ -7,19 +7,14 @@
   .sidebar__navigation {
     overflow-y: auto;
     scrollbar-width: thin;
-
+    @include text-style($color: $secondary-color);
     .sidebar__list {
       list-style: none;
 
       .sidebar__section {
         .sidebar__title {
           @include padding($left: 1rem);
-          @include text-style(
-            $font-size-medium,
-            $secondary-color,
-            $weight: bold,
-            $transform: uppercase
-          );
+          @include text-style($weight: bold, $transform: uppercase);
         }
 
         .sidebar__sublist {
@@ -28,7 +23,7 @@
           .sidebar__item {
             @include padding(0.5rem, 0, 0.5rem, 1rem);
             @include hover-effect($hover-color);
-            @include text-style($font-size-large, $secondary-color);
+            @include text-style($size: $font-size-large);
 
             .sidebar__icon {
               @include margin(0, 1rem, 0, 0);
@@ -52,7 +47,7 @@
 
       .sidebar__header-subtitle {
         @include margin(0.2rem, 0, 0, 0);
-        @include text-style($font-size-small, $secondary-color);
+        @include text-style($font-size-small);
       }
     }
   }

@@ -64,7 +64,7 @@ $font-size-xlarge: 1.4rem;
 
 @mixin text-style(
   $size: $font-size-medium,
-  $color: black,
+  $color: inherit,
   $decoration: none,
   $weight: normal,
   $transform: none,

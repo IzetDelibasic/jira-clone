@@ -11,6 +11,12 @@
 .sidebar .sidebar__navigation {
   overflow-y: auto;
   scrollbar-width: thin;
+  font-size: 0.8rem;
+  color: #777;
+  text-decoration: none;
+  font-weight: normal;
+  text-transform: none;
+  background-color: none;
 }
 .sidebar .sidebar__navigation .sidebar__list {
   list-style: none;
@@ -18,7 +24,7 @@
 .sidebar .sidebar__navigation .sidebar__list .sidebar__section .sidebar__title {
   padding: 0 0 0 1rem;
   font-size: 0.8rem;
-  color: #777;
+  color: inherit;
   text-decoration: none;
   font-weight: bold;
   text-transform: uppercase;
@@ -30,7 +36,7 @@
 .sidebar .sidebar__navigation .sidebar__list .sidebar__section .sidebar__sublist .sidebar__item {
   padding: 0.5rem 0 0.5rem 1rem;
   font-size: 0.9rem;
-  color: #777;
+  color: inherit;
   text-decoration: none;
   font-weight: normal;
   text-transform: none;
@@ -66,7 +72,7 @@
 .sidebar .sidebar__header .sidebar__header-content .sidebar__header-subtitle {
   margin: 0.2rem 0 0 0;
   font-size: 0.7rem;
-  color: #777;
+  color: inherit;
   text-decoration: none;
   font-weight: normal;
   text-transform: none;
@@ -120,7 +126,7 @@
 }
 .main-content__intro .main-content__header .main-content__header-title {
   font-size: 0.8rem;
-  color: black;
+  color: inherit;
   text-decoration: none;
   font-weight: normal;
   text-transform: none;
@@ -148,7 +154,7 @@
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
   margin: 0 0.5rem 0 0;
   font-size: 0.8rem;
-  color: black;
+  color: inherit;
   text-decoration: none;
   font-weight: bold;
   text-transform: none;
