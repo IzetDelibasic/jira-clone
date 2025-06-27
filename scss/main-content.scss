@@ -1,0 +1,56 @@
+@import "shared.scss";
+
+.main-content__button {
+  font-size: $font-size-large;
+  @include border($width: 0, $radius: 0.2rem);
+  @include padding(0.5rem, 0.5rem, 0.5rem, 0.5rem);
+}
+
+.main-content__dropdown {
+  @include text-style(
+    $size: $font-size-large,
+    $color: $dark-gray-color,
+    $weight: bold
+  );
+  @include border($width: 0);
+}
+
+.main-content__intro {
+  width: 100%;
+  @include padding(1rem, 1rem, 1rem, 1rem);
+
+  .main-content__header {
+    .main-content__header-title {
+      @include text-style();
+    }
+    .main-content__toolbar {
+      @include margin(0, 0, 1rem, 0);
+      @include flex($justify: space-between, $align: center);
+
+      .main-content__title {
+        @include text-style($font-size-xlarge, $primary-color, $weight: bold);
+      }
+      .main-content__icon {
+        @include margin(0, 0.5rem, 0, 0);
+      }
+      .dropdown--view {
+        @include padding(0.5rem, 0.5rem, 0.5rem, 0.5rem);
+        @include margin(0, 0.5rem, 0, 0);
+        @include text-style(
+          $background-color: $light-gray-color,
+          $weight: bold
+        );
+      }
+    }
+  }
+  .main-content__filters {
+    @include flex($justify: space-between, $align: center);
+    .main-content__search {
+      width: 15%;
+    }
+    .main-content__search::placeholder {
+      @include text-style($color: $dark-gray-color, $weight: normal);
+      @include padding(0.5rem, 0.5rem, 0.5rem, 0.5rem);
+    }
+  }
+}

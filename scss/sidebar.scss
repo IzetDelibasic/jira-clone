@@ -1,6 +1,6 @@
 .sidebar {
   max-height: 100vh;
-  width: 20%;
+  width: 200px;
   @include border(1px, solid, $border-color, right);
   @include flex($direction: column);
 
@@ -13,7 +13,7 @@
 
       .sidebar__section {
         .sidebar__title {
-          @include padding(0, 0, 0, 1rem);
+          @include padding($left: 1rem);
           @include text-style(
             $font-size-medium,
             $secondary-color,
@@ -26,16 +26,12 @@
           list-style: none;
 
           .sidebar__item {
-            @include margin(1rem, 0rem, 1rem, 0rem);
             @include padding(0.5rem, 0, 0.5rem, 1rem);
             @include hover-effect($hover-color);
+            @include text-style($font-size-large, $secondary-color);
 
-            .sidebar__link {
-              @include text-style($font-size-large, $secondary-color);
-
-              .sidebar__icon {
-                @include margin(0, 1rem, 0, 0);
-              }
+            .sidebar__icon {
+              @include margin(0, 1rem, 0, 0);
             }
           }
         }
@@ -67,8 +63,8 @@
     @include border(1px, solid, $border-color, top);
 
     &-text {
-      @include text-style($font-size-small, $secondary-color);
       @include margin(0, 0, 0.5rem, 0);
+      @include text-style($font-size-small, $secondary-color);
     }
 
     &-link {

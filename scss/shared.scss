@@ -1,5 +1,7 @@
 $primary-color: #2c3e50;
 $secondary-color: #777;
+$dark-gray-color: #404040;
+$light-gray-color: #ebebeb;
 $hover-color: #e3e1e1;
 $white-color: #fff;
 $border-color: #e1e0e0;
@@ -10,6 +12,7 @@ $font-family: "Open Sans", sans-serif;
 $font-size-small: 0.7rem;
 $font-size-medium: 0.8rem;
 $font-size-large: 0.9rem;
+$font-size-xlarge: 1.4rem;
 
 @mixin flex($justify: flex-start, $align: stretch, $direction: row) {
   display: flex;
@@ -35,9 +38,16 @@ $font-size-large: 0.9rem;
   padding: $top $right $bottom $left;
 }
 
-@mixin border($width: 1px, $style: solid, $color: $border-color, $sides: all) {
+@mixin border(
+  $width: 1px,
+  $style: solid,
+  $color: $border-color,
+  $sides: all,
+  $radius: 0
+) {
   @if $sides == all {
     border: $width $style $color;
+    border-radius: $radius;
   } @else {
     @if $sides == top {
       border-top: $width $style $color;
@@ -48,31 +58,22 @@ $font-size-large: 0.9rem;
     } @else if $sides == left {
       border-left: $width $style $color;
     }
+    border-radius: $radius;
   }
 }
 
 @mixin text-style(
-  $size,
-  $color,
+  $size: $font-size-medium,
+  $color: black,
   $decoration: none,
   $weight: normal,
-  $transform: none
+  $transform: none,
+  $background-color: none
 ) {
   font-size: $size;
   color: $color;
   text-decoration: $decoration;
   font-weight: $weight;
   text-transform: $transform;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  font-size: 10px;
-  font-family: $font-family;
+  background-color: $background-color;
 }
