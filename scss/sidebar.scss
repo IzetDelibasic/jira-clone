@@ -1,33 +1,28 @@
 .sidebar {
   max-height: 100vh;
   width: 200px;
+  @include flex($justify: start);
+  flex-direction: column;
+  @include text-style($size: $font-size-small, $color: $secondary-color);
   @include border(1px, solid, $border-color, right);
-  @include flex($direction: column);
 
   .sidebar__navigation {
     overflow-y: auto;
     scrollbar-width: thin;
-    @include text-style($color: $secondary-color);
-    .sidebar__list {
-      list-style: none;
+    .sidebar__section {
+      .sidebar__title {
+        @include padding($left: 1rem);
+        text-transform: uppercase;
+      }
 
-      .sidebar__section {
-        .sidebar__title {
-          @include padding($left: 1rem);
-          @include text-style($weight: bold, $transform: uppercase);
-        }
+      .sidebar__sublist {
+        .sidebar__item {
+          @include padding($top: 0.5rem, $left: 1rem, $bottom: 0.5rem);
+          @include hover-effect($hover-color);
+          font-size: $font-size-large;
 
-        .sidebar__sublist {
-          list-style: none;
-
-          .sidebar__item {
-            @include padding(0.5rem, 0, 0.5rem, 1rem);
-            @include hover-effect($hover-color);
-            @include text-style($size: $font-size-large);
-
-            .sidebar__icon {
-              @include margin(0, 1rem, 0, 0);
-            }
+          .sidebar__icon {
+            @include margin($right: 1rem);
           }
         }
       }
@@ -36,34 +31,33 @@
 
   .sidebar__header {
     @include flex($justify: start, $align: center);
-    @include margin(1rem, 1rem, 1rem, 1rem);
+    @include margin($top: 1rem, $right: 1rem, $bottom: 1rem, $left: 1rem);
 
     .sidebar__header-content {
-      @include margin(0, 0, 0, 1rem);
+      @include margin($left: 1rem);
 
       .sidebar__header-title {
-        @include text-style($font-size-medium, $primary-color);
+        @include text-style($size: $font-size-medium, $color: $primary-color);
       }
 
       .sidebar__header-subtitle {
-        @include margin(0.2rem, 0, 0, 0);
-        @include text-style($font-size-small);
+        @include margin($top: 0.2rem);
       }
     }
   }
 
   .sidebar__footer {
     text-align: center;
-    @include padding(1rem, 0, 1rem, 0);
-    @include border(1px, solid, $border-color, top);
+    @include padding($top: 1rem, $bottom: 1rem);
+    @include border($width: 1px, $style: solid, $sides: top);
 
-    &-text {
-      @include margin(0, 0, 0.5rem, 0);
-      @include text-style($font-size-small, $secondary-color);
+    .sidebar__footer-text {
+      @include margin($bottom: 0.5rem);
     }
 
-    &-link {
-      @include text-style($font-size-medium, $link-color);
+    .sidebar__footer-link {
+      @include text-style($size: $font-size-medium, $color: $link-color);
+      text-decoration: none;
     }
   }
 }

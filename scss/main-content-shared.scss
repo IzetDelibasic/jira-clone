@@ -1,0 +1,29 @@
+.main-content__button {
+  @include padding(
+    $top: 0.5rem,
+    $right: 0.5rem,
+    $bottom: 0.5rem,
+    $left: 0.5rem
+  );
+  @include border();
+  border-radius: 0.2rem;
+  font-size: $font-size-large;
+  font-weight: 600;
+}
+
+.main-content__dropdown {
+  font-size: $font-size-large;
+  font-weight: 600;
+  @include border($width: 0);
+}
+
+.main-content__sprint-actions-priority {
+  font-size: $font-size-xsmall;
+  @include padding(
+    $top: 0.3rem,
+    $right: 0.5rem,
+    $bottom: 0.3rem,
+    $left: 0.5rem
+  );
+  border-radius: 5rem;
+}

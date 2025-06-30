@@ -1,56 +1,142 @@
-@import "shared.scss";
-
-.main-content__button {
-  font-size: $font-size-large;
-  @include border($width: 0, $radius: 0.2rem);
-  @include padding(0.5rem, 0.5rem, 0.5rem, 0.5rem);
-}
-
-.main-content__dropdown {
-  @include text-style(
-    $size: $font-size-large,
-    $color: $dark-gray-color,
-    $weight: bold
-  );
-  @include border($width: 0);
-}
-
 .main-content__intro {
   width: 100%;
-  @include padding(1rem, 1rem, 1rem, 1rem);
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  @include padding($top: 1rem, $right: 1rem, $bottom: 1rem, $left: 1rem);
 
   .main-content__header {
     .main-content__header-title {
-      @include text-style();
+      @include text-style($size: $font-size-medium, $color: $secondary-color);
     }
     .main-content__toolbar {
-      @include margin(0, 0, 1rem, 0);
+      @include margin($bottom: 1rem);
       @include flex($justify: space-between, $align: center);
 
       .main-content__title {
-        @include text-style($font-size-xlarge, $primary-color, $weight: bold);
+        @include text-style($size: $font-size-xlarge, $color: $primary-color);
       }
       .main-content__icon {
-        @include margin(0, 0.5rem, 0, 0);
+        @include margin($right: 0.5rem);
       }
       .dropdown--view {
-        @include padding(0.5rem, 0.5rem, 0.5rem, 0.5rem);
-        @include margin(0, 0.5rem, 0, 0);
-        @include text-style(
-          $background-color: $light-gray-color,
-          $weight: bold
+        @include padding(
+          $top: 0.5rem,
+          $right: 0.5rem,
+          $bottom: 0.5rem,
+          $left: 0.5rem
         );
+        @include margin($right: 0.5rem);
       }
     }
   }
+
   .main-content__filters {
     @include flex($justify: space-between, $align: center);
     .main-content__search {
       width: 15%;
     }
     .main-content__search::placeholder {
-      @include text-style($color: $dark-gray-color, $weight: normal);
-      @include padding(0.5rem, 0.5rem, 0.5rem, 0.5rem);
+      @include text-style($color: $dark-gray-color, $size: $font-size-medium);
+      @include padding(
+        $top: 0.5rem,
+        $right: 0.5rem,
+        $bottom: 0.5rem,
+        $left: 0.5rem
+      );
+    }
+  }
+
+  .main-content__sprint {
+    @include margin($top: 1rem, $bottom: 1rem);
+    @include padding($top: 1rem, $bottom: 1rem);
+    background-color: $light-gray-color;
+    border-radius: 0.5rem;
+    .main-content__sprint-header {
+      @include flex($justify: space-between, $align: center);
+      @include padding($right: 1rem, $left: 1rem);
+      color: $dark-gray-color;
+      .main-content__sprint-description {
+        .main-content__sprint-description-title {
+          font-size: $font-size-medium;
+          font-weight: 600;
+        }
+        .main-content__sprint-description-date {
+          @include text-style($size: $font-size-small, $color: $primary-color);
+        }
+        .main-content__sprint-description-items {
+          @include text-style(
+            $size: $font-size-small,
+            $color: $secondary-color
+          );
+        }
+      }
+      .main-content__sprint-priorities {
+        @include flex($justify: space-between, $align: center);
+        .main-content__sprint-actions-priority {
+          @include margin($right: 0.5rem);
+        }
+        .main-content__button {
+          @include margin($right: 0.5rem);
+        }
+      }
+    }
+
+    .main-content__sprint-list {
+      @include padding(1rem, 1rem, 1rem, 1rem);
+      list-style: none;
+      .main-content__sprint-item {
+        background-color: $white-color;
+        @include flex($align: center);
+        @include padding(
+          $top: 0.2rem,
+          $right: 1.5rem,
+          $bottom: 0.2rem,
+          $left: 1.5rem
+        );
+        @include text-style($size: $font-size-medium, $color: $dark-gray-color);
+        @include border($width: 1px, $style: solid, $color: $border-color);
+        .main-content__sprint-info {
+          width: 80%;
+          .main-content__sprint-icon {
+            font-size: $font-size-medium;
+          }
+          .main-content__sprint-serial-number {
+            font-size: $font-size-small;
+          }
+          .main-content__sprint-task {
+            @include padding($left: 0.3rem);
+          }
+        }
+        .main-content__sprint-actions {
+          width: 50%;
+          @include flex($justify: space-between, $align: center);
+          @include padding(
+            $top: 0.2rem,
+            $right: 0.2rem,
+            $bottom: 0.2rem,
+            $left: 0.2rem
+          );
+          .main-content__sprint-actions-group {
+            @include flex($justify: center, $align: center);
+            .main-content__sprint-actions-label {
+              @include padding(
+                $top: 0.3rem,
+                $right: 0.3rem,
+                $bottom: 0.3rem,
+                $left: 0.3rem
+              );
+              @include margin($right: 0.5rem);
+              border-radius: 3px;
+              font-size: $font-size-xsmall;
+            }
+            .main-content__sprint-actions-priority {
+              @include margin($right: 1rem);
+              background-color: $light-gray-color;
+            }
+          }
+        }
+      }
     }
   }
 }
